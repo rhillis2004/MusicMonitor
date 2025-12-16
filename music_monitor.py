@@ -25,7 +25,7 @@ class MusicEventHandler(FileSystemEventHandler):
         # Assumes beets is configured to accept music_source as a flexible attribute
         try:
             subprocess.run([
-                'beet', 'import', '-A', f'-c', f'music_source={music_source}', folder_path
+                'beet', 'import', '-A', '--set', f'music_source={music_source}', folder_path
             ], check=True)
         except subprocess.CalledProcessError as e:
             print(f"Error importing {folder_path}: {e}")
