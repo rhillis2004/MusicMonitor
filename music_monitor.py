@@ -32,6 +32,13 @@ class MusicEventHandler(FileSystemEventHandler):
 
 def main():
     event_handler = MusicEventHandler()
+    # Scan for existing subfolders and import them
+    print(f"Scanning for existing subfolders in {MONITOR_PATH}...")
+    for entry in os.scandir(MONITOR_PATH):
+        if entry.is_dir():
+            print(f"Found existing folder: {entry.path}")
+            event_handler.import_with_beets(entry.path)
+
     observer = Observer()
     observer.schedule(event_handler, MONITOR_PATH, recursive=True)
     observer.start()
