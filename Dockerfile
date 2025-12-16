@@ -15,4 +15,4 @@ COPY config.yaml /app/
 ENV BEETS_CONFIG=/app/config.yaml
 
 # Set the default command
-CMD ["python", "music_monitor.py"]
+CMD ["python", "-u", "music_monitor.py"]

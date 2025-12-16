@@ -1,5 +1,5 @@
 library: library.db
-directory: /mnt/p/Music
+directory: /mnt/nas/Music/library
 
 import:
     write: yes
