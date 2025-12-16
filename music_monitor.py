@@ -3,7 +3,7 @@ import os
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-MONITOR_PATH = '/mnt/nas/Music'
+MONITOR_PATH = '/mnt/nas/Music/imports'
 
 import subprocess
 
