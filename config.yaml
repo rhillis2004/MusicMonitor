@@ -38,7 +38,7 @@ overwrite_null:
     album: []
     track: []
 
-plugins: fetchart chroma lyrics lastgenre acousticbrainz mbsubmit mbcollection mbupdate
+plugins: fetchart chroma lyrics lastgenre acousticbrainz mbsubmit mbcollection
 pluginpath: []
 threaded: yes
 timeout: 5.0
@@ -87,6 +87,8 @@ musicbrainz:
     searchlimit: 5
     extra_tags: []
     genres: no
+    user: rhillis2004
+    pass: HZdt-HDka_6gVGg
 
 match:
     strong_rec_thresh: 0.04

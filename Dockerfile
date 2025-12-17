@@ -9,7 +9,7 @@ RUN chmod +x /app/beets_maintenance.sh
 
 # Install beets, watchdog, ffmpeg, cron, and plugin dependencies
 RUN apt-get update && apt-get install -y ffmpeg cron \
-    && pip install --no-cache-dir beets watchdog requests pyacoustid langdetect pylast \
+    && pip install --no-cache-dir beets watchdog requests pyacoustid langdetect pylast bs4 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 
