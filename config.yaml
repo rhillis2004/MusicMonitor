@@ -87,7 +87,7 @@ musicbrainz:
     searchlimit: 5
     extra_tags: []
     genres: no
-    user: rhillis2004
+    user: rhillis2004    docker exec -it musicmonitor env | grep BEETS_CONFIG
     pass: HZdt-HDka_6gVGg
 
 match:

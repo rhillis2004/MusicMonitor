@@ -28,11 +28,10 @@ class MusicEventHandler(FileSystemEventHandler):
         # Use the last part of the folder path as music_source
         music_source = os.path.basename(folder_path)
         print(f"Importing {folder_path} with music_source={music_source}")
-        # Call beets import with -A and set music_source
-        # Assumes beets is configured to accept music_source as a flexible attribute
+        # Always specify the config file for reliability
         try:
             subprocess.run([
-                'beet', 'import', '-A', '--set', f'music_source={music_source}', folder_path
+                'beet', '-c', '/app/config.yaml', 'import', '-A', '--set', f'music_source={music_source}', folder_path
             ], check=True)
         except subprocess.CalledProcessError as e:
             print(f"Error importing {folder_path}: {e}")
