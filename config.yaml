@@ -38,7 +38,7 @@ overwrite_null:
     album: []
     track: []
 
-plugins: fetchart chroma lyrics lastgenre acousticbrainz mbsubmit mbcollection
+plugins: fetchart chroma lyrics lastgenre mbsubmit mbcollection
 pluginpath: []
 threaded: yes
 timeout: 5.0
