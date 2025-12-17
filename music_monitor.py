@@ -14,8 +14,15 @@ class MusicEventHandler(FileSystemEventHandler):
             self.import_with_beets(event.src_path)
         else:
             print(f"New file detected: {event.src_path}")
-            parent_folder = os.path.dirname(event.src_path)
-            self.import_with_beets(parent_folder)
+            # Find the immediate subfolder of MONITOR_PATH containing the file
+            abs_monitor_path = os.path.abspath(MONITOR_PATH)
+            abs_file_path = os.path.abspath(event.src_path)
+            rel_path = os.path.relpath(abs_file_path, abs_monitor_path)
+            # The first part of rel_path is the immediate subfolder
+            first_part = rel_path.split(os.sep)[0]
+            immediate_subfolder = os.path.join(abs_monitor_path, first_part)
+            print(f"Importing immediate subfolder: {immediate_subfolder}")
+            self.import_with_beets(immediate_subfolder)
 
     def import_with_beets(self, folder_path):
         # Use the last part of the folder path as music_source
@@ -25,7 +32,7 @@ class MusicEventHandler(FileSystemEventHandler):
         # Assumes beets is configured to accept music_source as a flexible attribute
         try:
             subprocess.run([
-                'beet', 'import', '-A', '-r', '--set', f'music_source={music_source}', folder_path
+                'beet', 'import', '--set', f'music_source={music_source}', folder_path
             ], check=True)
         except subprocess.CalledProcessError as e:
             print(f"Error importing {folder_path}: {e}")
