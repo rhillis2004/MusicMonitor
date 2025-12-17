@@ -4,31 +4,7 @@ directory: /mnt/nas/Music/library
 import:
     write: yes
     move: yes
-    link: no
-    hardlink: no
-    reflink: no
-    delete: no
-    resume: ask
-    incremental: no
-    incremental_skip_later: no
-    from_scratch: no
-    quiet_fallback: skip
-    none_rec_action: ask
-    timid: no
     log: import.log
-    autotag: no
-    quiet: yes
-    singletons: no
-    default_action: apply
-    languages: []
-    detail: no
-    flat: no
-    group_albums: no
-    pretend: no
-    search_ids: []
-    duplicate_action: ask
-    bell: no
-    set_fields: {}
 
 clutter: [Thumbs.DB, .DS_Store]
 ignore:
@@ -62,7 +38,7 @@ overwrite_null:
     album: []
     track: []
 
-plugins: beets-artistcountry beets-autofix beets-autogenre beets-barcode beets-bpmanalyzer beets-check beets-plexsync beets-setlister beet-summarize beets-usertag beets-yearfixer
+plugins: fetchart chroma lyrics lastgenre acousticbrainz mbsubmit mbcollection mbupdate
 pluginpath: []
 threaded: yes
 timeout: 5.0
