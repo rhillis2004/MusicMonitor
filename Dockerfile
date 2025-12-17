@@ -7,9 +7,9 @@ WORKDIR /app
 COPY music_monitor.py config.yaml beets_maintenance.sh ./
 RUN chmod +x /app/beets_maintenance.sh
 
-# Install beets, watchdog, ffmpeg, and cron
+# Install beets, watchdog, ffmpeg, cron, and plugin dependencies
 RUN apt-get update && apt-get install -y ffmpeg cron \
-    && pip install --no-cache-dir beets watchdog \
+    && pip install --no-cache-dir beets watchdog requests acoustid langdetect pylast \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 
