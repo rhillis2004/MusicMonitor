@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  musicmonitor:
+    build: .
+    container_name: musicmonitor
+    volumes:
+      - /mnt/nas/Music:/mnt/nas/Music
+    environment:
+      - BEETS_CONFIG=/app/config.yaml
+    command: ["python", "-u", "music_monitor.py"]
