@@ -3,6 +3,7 @@ services:
   musicmonitor:
     build: .
     container_name: musicmonitor
+    restart: unless-stopped
     volumes:
       - /mnt/nas/Music:/mnt/nas/Music
     environment:
