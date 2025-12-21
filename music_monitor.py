@@ -39,7 +39,7 @@ def import_worker(import_queue):
         print(f"Importing {folder_path} with music_source={music_source}")
         try:
             subprocess.run([
-                'beet', 'import', '-A', '--set', f'music_source={music_source}', folder_path
+                'beet', 'import', '-A', '-y', '--set', f'music_source={music_source}', folder_path
             ], check=True)
         except subprocess.CalledProcessError as e:
             print(f"Error importing {folder_path}: {e}")
