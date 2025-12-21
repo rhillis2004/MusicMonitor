@@ -5,6 +5,9 @@ import:
     write: yes
     move: yes
     log: import.log
+    quiet_fallback: asis
+    timid: no
+    incremental: yes
 
 clutter: [Thumbs.DB, .DS_Store]
 ignore:
