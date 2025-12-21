@@ -1,4 +1,4 @@
-library: library.db
+library: /app/library.db
 directory: /mnt/nas/Music/library
 
 import:

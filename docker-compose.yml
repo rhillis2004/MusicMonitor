@@ -6,6 +6,6 @@ services:
     restart: unless-stopped
     volumes:
       - /mnt/nas/Music:/mnt/nas/Music
-    environment:
-      - BEETS_CONFIG=/app/config.yaml
+      - ./config.yaml:/root/.config/beets/config.yaml
+      - /data/MusicMonitor/library.db:/app/library.db
     command: ["python", "-u", "music_monitor.py"]
